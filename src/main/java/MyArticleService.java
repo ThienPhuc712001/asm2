@@ -6,6 +6,7 @@ import org.jsoup.select.Elements;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashSet;
 
 public class MyArticleService implements ArticleService {
@@ -32,15 +33,12 @@ public class MyArticleService implements ArticleService {
         Article article = new Article();
         try {
             Document doc = Jsoup.connect(url).get();
-            article.setBaseUrl(url);
-            article.setTitle(doc.select("h1.title").text());
-            article.setDescription(doc.select("p.description").text());
-            article.setContent(doc.select("div.content").text());
-            article.setThumbnail(doc.select("img.thumbnail").attr("src"));
-            article.setCreatedAt(LocalDate.parse(LocalDate.now().toString()));
-            article.setUpdatedAt(LocalDate.parse(java.time.LocalDateTime.now().toString()));
-            article.setDeletedAt(LocalDate.parse(java.time.LocalDateTime.now().toString()));
-            article.setStatus(1);
+            String title = doc.select("h1.title").text();
+            String description = doc.select("h2.description").text();
+            String content = doc.select("div.content").text();
+            String thumbnail = doc.select("img.thumbnail").attr("src");
+            Date now = new Date();
+            return new Article(0, "https://thethao247.vn", title, description, content, thumbnail, now, now, null, 1);
         } catch (IOException e) {
             e.printStackTrace();
         }

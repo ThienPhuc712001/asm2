@@ -17,7 +17,7 @@ public class MySqlArticleRepository implements ArticleRepository{
             Connection connection = DriverManager.getConnection(MYSQL_CONNECTION_STRING,
                     MYSQL_USERNAME,
                     MYSQL_PASSWORD);
-            String sql = "select * from articles where status = 1";
+            String sql = "select * from articles ";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
@@ -56,7 +56,7 @@ public class MySqlArticleRepository implements ArticleRepository{
         Article article = null;
         try {
             Connection connection = DriverManager.getConnection(MYSQL_CONNECTION_STRING, MYSQL_USERNAME, MYSQL_PASSWORD);
-            String sql = "select * from articles where baseurl = ?";
+            String sql = "select * from articles where url = ?";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1, url);
             ResultSet resultSet = preparedStatement.executeQuery();
@@ -99,10 +99,8 @@ public class MySqlArticleRepository implements ArticleRepository{
                             MYSQL_PASSWORD);
             // 2. Tạo câu lệnh prepareStatement
             String prepareSql =
-                    "insert into articles "
-                            + "(baseUrl,title, description, content, thumbnail, createdAt,updatedAt,deletedAt, status) "
-                            + "values "
-                            + "(?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                    "insert into articles (base_url, title, description, content, thumbnail, created_at, updated_at, deleted_at, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
             PreparedStatement preparedStatement = connection.prepareStatement(prepareSql);
             // 3. Thực thi câu lệnh
             preparedStatement.setString(1, article.getBaseUrl());
@@ -149,7 +147,7 @@ public class MySqlArticleRepository implements ArticleRepository{
             preparedStatement.setString(8, article.getDeletedAt().toString());
             preparedStatement.setInt(9, article.getStatus());
             preparedStatement.setLong(10, article.getId());
-            preparedStatement.execute();
+            preparedStatement.executeUpdate();
             System.out.println("Updated success!");
             // 4. Đóng kết nối.
             connection.close();
@@ -168,18 +166,10 @@ public class MySqlArticleRepository implements ArticleRepository{
                     DriverManager.getConnection(MYSQL_CONNECTION_STRING,
                             MYSQL_USERNAME,
                             MYSQL_PASSWORD);
-            // 2. Tạo câu lệnh prepareStatement
-            String prepareSql =
-                    "update articles set status = -1 where baseurl = ?";
-            PreparedStatement preparedStatement = connection.prepareStatement(prepareSql);
-            // 3. Thực thi câu lệnh
-            preparedStatement.setString(1, url);
-            preparedStatement.executeUpdate();
-            System.out.println("Deleted success!");
-            // 4. Đóng kết nối.
-            connection.close();
+            PreparedStatement stmt = connection.prepareStatement("DELETE FROM articles WHERE url = ?");
+            stmt.setString(1, url);
+            stmt.executeUpdate();
         } catch (SQLException e) {
-            System.out.println("Có lỗi xảy ra, vui lòng thử lại sau.");
             e.printStackTrace();
         }
 

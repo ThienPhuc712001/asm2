@@ -4,20 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d68ccf33-bcc8-4a16-86dc-0cf8a2d3884b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Application.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Article.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ArticleRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ArticleService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/MyArticleService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/MySqlArticleRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/VnexpressArticleService.java" afterDir="false" />
+    <list default="true" id="d68ccf33-bcc8-4a16-86dc-0cf8a2d3884b" name="Changes" comment="asm2">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Article.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MyArticleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MyArticleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MySqlArticleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MySqlArticleRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/VnexpressArticleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/VnexpressArticleService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +55,20 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RunManager">
+    <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Application" />
+      <module name="ASM2" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Application" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -83,8 +92,25 @@
       <workItem from="1717950017170" duration="152000" />
       <workItem from="1717950260709" duration="40000" />
       <workItem from="1717952882022" duration="191000" />
-      <workItem from="1717978823008" duration="299000" />
+      <workItem from="1717978823008" duration="624000" />
+      <workItem from="1717983724900" duration="198000" />
+      <workItem from="1717983965801" duration="222000" />
+      <workItem from="1717984204877" duration="1666000" />
+      <workItem from="1717986015980" duration="151000" />
+      <workItem from="1717986309454" duration="327000" />
+      <workItem from="1717987199395" duration="1668000" />
+      <workItem from="1717989403231" duration="1046000" />
+      <workItem from="1717991511036" duration="8165000" />
     </task>
+    <task id="LOCAL-00001" summary="asm2">
+      <option name="closed" value="true" />
+      <created>1717979407941</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1717979407941</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -100,6 +126,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="asm2" />
+    <option name="LAST_COMMIT_MESSAGE" value="asm2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

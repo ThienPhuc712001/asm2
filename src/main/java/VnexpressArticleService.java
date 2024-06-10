@@ -6,12 +6,13 @@ import org.jsoup.select.Elements;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashSet;
 
 public class VnexpressArticleService implements ArticleService {
     @Override
     public ArrayList<String> getLinks(String url) {
-        HashSet<String> links = new HashSet<>(); // Conllections chua nhung phan` tu? voi gia tri unique
+        HashSet<String> links = new HashSet<>();
         try {
             Document document = Jsoup.connect(url).get();
             Elements elements = document.getElementsByTag("a");
@@ -32,18 +33,15 @@ public class VnexpressArticleService implements ArticleService {
         Article article = new Article();
         try {
             Document doc = Jsoup.connect(url).get();
-            article.setBaseUrl(url);
-            article.setTitle(doc.select("h1.title-detail").text());
-            article.setDescription(doc.select("p.description").text());
-            article.setContent(doc.select(".fck_detail").text());
-            article.setThumbnail(doc.select(".fig-picture img").attr("src"));
-            article.setCreatedAt(LocalDate.parse(java.time.LocalDateTime.now().toString()));
-            article.setUpdatedAt(LocalDate.parse(java.time.LocalDateTime.now().toString()));
-            article.setDeletedAt(LocalDate.parse(java.time.LocalDateTime.now().toString()));
-            article.setStatus(1);
+            String title = doc.select("h1.title").text();
+            String description = doc.select("h2.description").text();
+            String content = doc.select("div.content").text();
+            String thumbnail = doc.select("img.thumb").attr("src");
+            Date now = new Date();
+            return new Article(0, "https://vnexpress.net", title, description, content, thumbnail, now, now, null, 1);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return article;
+        return null;
     }
 }

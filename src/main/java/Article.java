@@ -1,4 +1,5 @@
 import java.time.LocalDate;
+import java.util.Date;
 
 public class Article {
     private int id;
@@ -27,6 +28,9 @@ public class Article {
         this.updatedAt = updatedAt;
         this.deletedAt = deletedAt;
         this.status = status;
+    }
+
+    public Article(int id, String baseUrl, String title, String description, String content, String thumbnail, Date now, Date now1, Object deletedAt, int status) {
     }
 
     public int getId() {
